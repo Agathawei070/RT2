@@ -20,7 +20,7 @@ let iniciar = () => {
       let instrucoes = valor.split(' ');
       let numero1 = Number(instrucoes[0]);
       let numero2 = Number(instrucoes[1]);
-      let operacao = instrucoes[3];
+      let operacao = instrucoes[instrucoes.length - 1];
       let numero3: number | undefined;
 
       if (operacao === 'Bhaskara' && instrucoes.length === 4) {
@@ -42,6 +42,7 @@ let iniciar = () => {
               calculo = new Subtracao();
               console.log(`O resultado da operação é: ${calculo.calcular(numero1, numero2)}\n`);
               break;
+
           case 'Multiplicar':
               calculo = new Multiplicacao();
               console.log(`O resultado da operação é: ${calculo.calcular(numero1, numero2)}\n`);
